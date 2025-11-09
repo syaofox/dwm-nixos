@@ -29,8 +29,12 @@
   users.users.syaofox = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" ];
-    shell = pkgs.zsh;
+    shell = pkgs.bashInteractive;
   };
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.enable = false;
 
   system.stateVersion = "24.05";
 }
